@@ -16,7 +16,7 @@ import (
 func modeTypeFromDirent(de *syscall.Dirent, osDirname, osBasename string) (os.FileMode, error) {
 	switch de.Type {
 	case syscall.DT_REG:
-		return 0, nil
+		return os.ModePerm, nil
 	case syscall.DT_DIR:
 		return os.ModeDir, nil
 	case syscall.DT_LNK:
